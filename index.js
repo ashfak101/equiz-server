@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 //Database
-const uri = "mongodb+srv://kavinRahi:tnSwShAd0OUzYF0S@cluster0.jrsbo.mongodb.net/?retryWrites=true&w=majority";
+
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -40,8 +40,13 @@ async function run (){
           courses:name
         }
       }
+      const crs ={
+        name:name,
+        category:category
+      }
       const options = { upsert: true };
       const result = await categories.updateOne(filter,updatedoc,options);
+      result2= await courses.insertOne(crs);
         // const result = cd.courses.push(name);
         // res.send(result);
         // const result2= await categories.updateOne({cd},{$set:{courses:result}});
