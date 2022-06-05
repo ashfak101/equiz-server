@@ -1,0 +1,24 @@
+[
+    {
+        "id":1,
+        "category":"it/computer",
+        "title":"Computer operator",
+        "courses":[
+            {
+                "id":1,
+                "title":"Computer operator",
+                "description":"Computer operator",
+                "price":100,
+                "course_img":"https://www.w3schools.com/howto/img_avatar.png",
+                "course_duration":1,
+                "course_max_students":10,
+                "course_students":0,
+                
+                "course_teacher":"Ivan Ivanov",
+                "course_teacher_id":1,
+                "courseContent":[],
+                "courseQuizzes":[]
+            }
+        ]
+    }
+]
