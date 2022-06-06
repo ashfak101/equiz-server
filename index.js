@@ -1,14 +1,16 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 const app = express();
-const port = 4000;
+const port =process.env.PORT || 4000;
 //Middleware
 app.use(cors());
 app.use(express.json());
 
-//Database
-
+//Connecting to MongoDB
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jrsbo.mongodb.net/?retryWrites=true&w=majority`;
+// MongoDB config 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -76,5 +78,4 @@ app.listen(port, () => {
   console.log(`App listening  in port${port}`);
 });
 
-// tnSwShAd0OUzYF0S
-// kavinRahi
+
